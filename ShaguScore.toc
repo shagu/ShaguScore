@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: |cff33ffccShagu|cffffffffScore
+## Author: Eric (Shagu) Mauser, 2015
+## Notes: Displays the average color of targets Gear
+## Version: 0.1
+
+ShaguScore.lua
