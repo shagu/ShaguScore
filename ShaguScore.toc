@@ -1,7 +1,6 @@
 ## Interface: 11200
 ## Title: |cff33ffccShagu|cffffffffScore
-## Author: Eric (Shagu) Mauser, 2015
-## Notes: Displays the average color of targets Gear
-## Version: 0.1
-
+## Author: Shagu, 2015-2017
+## Notes: Display Gear-Rating based on ItemLevel and Color
+## Version: 2.0
 ShaguScore.lua
