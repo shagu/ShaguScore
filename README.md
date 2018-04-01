@@ -4,6 +4,13 @@ This AddOn is a GearScore alike item rating. It includes a small database of the
 
 ![preview](http://shagu.org/shagucollection/img/ShaguScore.jpg)
 
+## Installation
+1. Download **[Latest Version](https://github.com/shagu/ShaguScore/archive/master.zip)**
+2. Unpack the Zip file
+3. Rename the folder "ShaguScore-master" to "ShaguScore"
+4. Copy "ShaguScore" into Wow-Directory\Interface\AddOns
+5. Restart Wow
+
 ## Older Versions
 
 In older versions this addon did two things, it calculated the average color (rarity) of the player's equip and it aggregated a score of the overall equip.
