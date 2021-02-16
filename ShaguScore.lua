@@ -13,6 +13,8 @@ ShaguScore:SetScript("OnShow", function()
     local _, _, itemID = string.find(GameTooltip.itemLink, "item:(%d+):%d+:%d+:%d+")
     local _, _, itemLink = string.find(GameTooltip.itemLink, "(item:%d+:%d+:%d+:%d+)");
 
+    if not itemLink then return end
+
     local itemLevel = ShaguScore.Database[tonumber(itemID)] or 0
     local _, _, itemRarity, _, _, _, _, itemSlot, _ = GetItemInfo(itemLink)
     local r,g,b = GetItemQualityColor(itemRarity)
