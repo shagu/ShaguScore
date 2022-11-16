@@ -31,6 +31,16 @@ ShaguScore:SetScript("OnHide", function()
   GameTooltip.itemLink = nil
 end)
 
+local function GetItemLinkByName(name)
+  for itemID = 1, 25818 do
+    local itemName, hyperLink, itemQuality = GetItemInfo(itemID)
+    if (itemName and itemName == name) then
+      local _, _, _, hex = GetItemQualityColor(tonumber(itemQuality))
+      return hex.. "|H"..hyperLink.."|h["..itemName.."]|h|r"
+    end
+  end
+end
+
 -- target inspect
 ShaguScoreHookInspectUnit = InspectUnit
 function InspectUnit(unit)
@@ -208,6 +218,14 @@ function GameTooltip.SetTradeSkillItem(self, skillIndex, reagentIndex)
     GameTooltip.itemLink = GetTradeSkillItemLink(skillIndex)
   end
   return ShaguScoreHookSetTradeSkillItem(self, skillIndex, reagentIndex)
+end
+
+local HookSetAuctionItem = GameTooltip.SetAuctionItem
+function GameTooltip.SetAuctionItem(self, atype, index)
+  local itemName, _, itemCount = GetAuctionItemInfo(atype, index)
+  GameTooltip.itemCount = itemCount
+  GameTooltip.itemLink = GetItemLinkByName(itemName)
+  return HookSetAuctionItem(self, atype, index)
 end
 
 local ShaguScoreHookSetAuctionSellItem = GameTooltip.SetAuctionSellItem
