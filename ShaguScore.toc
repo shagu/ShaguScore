@@ -4,3 +4,4 @@
 ## Notes: Display Gear-Rating based on ItemLevel and Color
 ## Version: 2.0
 ShaguScore.lua
+Database.lua
