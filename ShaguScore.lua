@@ -32,7 +32,7 @@ ShaguScore:SetScript("OnHide", function()
 end)
 
 local function GetItemLinkByName(name)
-  for itemID = 1, 25818 do
+  for itemID = 1, 65536 do
     local itemName, hyperLink, itemQuality = GetItemInfo(itemID)
     if (itemName and itemName == name) then
       local _, _, _, hex = GetItemQualityColor(tonumber(itemQuality))
