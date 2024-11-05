@@ -67,8 +67,6 @@ ShaguScore.CharacterFrame:SetWidth(200)
 ShaguScore.CharacterFrame:SetHeight(50)
 ShaguScore.CharacterFrame:SetPoint("BOTTOM", 0, 0)
 ShaguScore.CharacterFrame.text = ShaguScore.CharacterFrame:CreateFontString("Status", "LOW", "GameFontNormal")
-ShaguScore.CharacterFrame.text:SetPoint("CENTER", 0, 0)
-
 ShaguScore.CharacterFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 ShaguScore.CharacterFrame:RegisterEvent("UNIT_NAME_UPDATE")
 ShaguScore.CharacterFrame:RegisterEvent("UNIT_PORTRAIT_UPDATE")
@@ -80,6 +78,13 @@ ShaguScore.CharacterFrame:SetScript("OnEvent", function()
     ShaguScore.CharacterFrame.text:SetTextColor(r, g, b)
   end
 end)
+
+--- BetterCharacterStats compatibility check
+if BCSFrame then
+  ShaguScore.CharacterFrame.text:SetPoint("CENTER", 0, 20)
+else
+  ShaguScore.CharacterFrame.text:SetPoint("CENTER", 0, 0)
+end
 
 -- functions
 function ShaguScore:round(input, places)
